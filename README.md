@@ -3,7 +3,6 @@
 ## Introduction
 
 This project documents how to create a dynamic pipeline in Azure Data Factory by the use of parameters. 
-This project is mainly based on this [reference:DP-203: 11 - Dynamic Azure Data Factory](https://www.youtube.com/watch?v=BSQ8rRZUno0&list=PLuQSde7Xvu7DCRenR1otgxAplTtnzKO9e&index=12&ab_channel=TybulonAzure)
 
 ## Technologies Used
 
@@ -15,3 +14,8 @@ This project is mainly based on this [reference:DP-203: 11 - Dynamic Azure Data 
 ## Security
 
 - ADF Managed Identity is given  to access Key Vault
+
+
+## Additional Resources
+
+- [reference:DP-203: 11 - Dynamic Azure Data Factory](https://www.youtube.com/watch?v=BSQ8rRZUno0&list=PLuQSde7Xvu7DCRenR1otgxAplTtnzKO9e&index=12&ab_channel=TybulonAzure)
