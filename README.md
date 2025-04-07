@@ -81,6 +81,8 @@ ALTER ROLE db_datareader ADD MEMBER [DataFactoryManagedIdentity];
 
 ![image](https://github.com/user-attachments/assets/12356354-8296-4109-8b2c-becc23116ae0)
 
+### . Configuring Pipeline in Data Factory
+
 
 ## Architecture Diagram
 
