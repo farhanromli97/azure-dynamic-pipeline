@@ -82,7 +82,44 @@ ALTER ROLE db_datareader ADD MEMBER [DataFactoryManagedIdentity];
 ![image](https://github.com/user-attachments/assets/12356354-8296-4109-8b2c-becc23116ae0)
 
 ### . Configuring Pipeline in Data Factory
+- Create a Lookup activity
+- Create a ForEach activity
+- Link the two activities on success
+- Create parameters as seen below
 
+![image](https://github.com/user-attachments/assets/4c483cea-5ec3-4257-a3d9-b827201da4e4)
+
+
+### . Setting up the Lookup activity
+- Set the generic SQL Database dataset as the source dataset
+- Pass below query
+```sql
+SELECT t.name AS tableName, 
+SCHEMA_NAME(t.schema_id) AS schemaName
+FROM sys.tables as t
+```
+![image](https://github.com/user-attachments/assets/8b183938-c8a6-4b91-bb38-f5d577b929ae)
+
+### . Setting up the ForEach activity
+- Set up the Items in the settings as seen below
+
+![image](https://github.com/user-attachments/assets/bdd73285-dc34-4d0f-bd65-22515785efe0)
+
+- Create the Copy activity
+
+![image](https://github.com/user-attachments/assets/4414adf8-8a91-4dc7-9c87-3f24ad16f67f)
+
+  - Set the generic SQL Database dataset as the source dataset
+  - Pass below query
+    ```adflang
+    @concat('SELECT * FROM ', item().schemaName, '.', item().tableName)
+    ```   
+
+![image](https://github.com/user-attachments/assets/c6197363-5979-4eff-b3e4-41cfe73276ab)
+
+  - Set the generic Data Lake Gen 2 dataset as sink dataset
+
+![image](https://github.com/user-attachments/assets/b3a29379-e55c-4c0e-bd14-0720646c7316)
 
 ## Architecture Diagram
 
